@@ -3,8 +3,10 @@ import {trendingFilms} from 'servises/fetch_film.js'
 import { Vortex } from 'react-loader-spinner';
 import {FilmGalleryItem} from '../FilmGalleryItem/FilmGalleryItem'
 
+
+
 const Home = () => {
-    const [films, setFilm] = useState([]);
+    const [films, setFilms] = useState([]);
     const [currentFilm, setCurrentFilm] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState('');
@@ -14,16 +16,19 @@ const Home = () => {
         setIsLoading(true);
         trendingFilms()
             .then(({ data }) => {
-                setFilm(films => [...films, ...data.hits]);
-                currentFilm(data.hits)
+                console.log(data.results)
+                setFilms(data.results);
+                
+                // currentFilm([...data.results])
             })
             .catch((error) => setError(error))
             .finally(() => {
                 setIsLoading(false)
+                console.log(films)
             })
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    },[]);
 
     
     return (

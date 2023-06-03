@@ -1,5 +1,6 @@
 import { LiStyled } from '../styled'
 // import '../styles.css'
+const IMG_URL = `https://image.tmdb.org/t/p/original`
 
 export const FilmGalleryItem = ({ film }) => {
 //   const [showModal, setShowModal] = useState(false);
@@ -9,7 +10,7 @@ export const FilmGalleryItem = ({ film }) => {
 //   }
 
 
-  const { id, webformatURL, largeImageURL } = film;
+  const { id, overview, title, backdrop_path } = film;
 
   return (
     <>
@@ -18,7 +19,11 @@ export const FilmGalleryItem = ({ film }) => {
       </Modal>)} */}
 
       <li key={id} className="gallery-item">
-        <div></div>
+              <div>
+                  <img src={`${IMG_URL}/${backdrop_path}`} alt={title} />
+                  <p>{title}</p>
+                  <p>{ overview}</p>
+        </div>
       </li>
     </>
   )

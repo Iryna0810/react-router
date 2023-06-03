@@ -13,11 +13,24 @@ export const App = () => {
       }}
     >
       <nav>
-        <NavLink>Home</NavLink>
+        <ul>
+          <li>
+            <NavLink to='/'>Home</NavLink>
+          </li>
+          <li>
+            <NavLink to='/movies'>Movies</NavLink>
+          </li>
+        </ul>
       </nav>
+
       <Routes>
-        <Route path="/" element={<div>Home</div>}/>
+        <Route path="/" element={<div>Home</div>} />
+        <Route path='/movies' element={<div>Movies</div>} />
+        <Route path='/movies/:movieId' element={<div>Movies</div>} />
+        {/* <Route path='/movies' element={<div>Movies</div>} />
+        <Route path='/movies' element={<div>Movies</div>} /> */}
       </Routes>
     </div>
   );
 };
+

@@ -1,4 +1,4 @@
-import { BrowserRouter } from "react-router-dom";
+import { NavLink, Route, Routes } from "react-router-dom";
 
 export const App = () => {
   return (
@@ -12,7 +12,12 @@ export const App = () => {
         color: '#010101'
       }}
     >
-      React homework template
+      <nav>
+        <NavLink>Home</NavLink>
+      </nav>
+      <Routes>
+        <Route path="/" element={<div>Home</div>}/>
+      </Routes>
     </div>
   );
 };

@@ -9,7 +9,7 @@ display: flex;
   width: 100%;
   height: 100%;
   font: normal normal bold 30px comic sans ms;
-  	list-style: none;
+  list-style: none;
 	padding: 0;
   margin: 0;
 `;
@@ -26,6 +26,21 @@ export const Link = styled(NavLink)`
     background-color: orangered;
   }`
 
+  export const LinkPage = styled(NavLink)`
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 300;
+  font: normal normal bold 20px comic sans ms;
+  background-color: #3f51b5;
+
+  &.active {
+    color: white;
+    background-color: orangered;
+  }`
+
+
 export const FormWrapper = styled.form`
   display: flex;
   align-items: center;
@@ -38,9 +53,9 @@ export const FormWrapper = styled.form`
 `;
 
 export const Header = styled.header`
-  // top: 0;
-  // left: 0;
-  // position: relative;
+  top: 0;
+  left: 0;
+  position: relative;
   z-index: 1100;
   display: flex;
   justify-content: center;
@@ -51,6 +66,7 @@ export const Header = styled.header`
   padding-top: 12px;
   padding-bottom: 12px;
   color: #fff;
+  margin: 20px;
   background-color: #3f51b5;
   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
     0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import {trendingFilms} from 'servises/fetch_film.js'
-import { Vortex } from 'react-loader-spinner';
+import {trendingFilms} from 'servises/fetch_trendy_film.js'
+import Loader from '../components/Loader/Loader'
 import FilmGalleryItem from '../components/FilmGalleryItem/FilmGalleryItem'
 import { Button} from 'components/styled';
 import "../styles.css"
@@ -15,7 +15,6 @@ const Home = () => {
     const [currentPage, setCurrentPage] = useState(1);
     
      useEffect(() => {
-        // if (!searchImages || currentPage === 1) return;
         setIsLoading(true);
         trendingFilms(currentPage)
             .then(({ data }) => {
@@ -26,7 +25,6 @@ const Home = () => {
             .catch((error) => setError(error))
             .finally(() => {
                 setIsLoading(false)
-                console.log(films)
             })
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -39,20 +37,10 @@ const Home = () => {
 
    
     return (
-    <div className="FilmGallery">
-        {isLoading && <Vortex
-                    visible={true}
-                    height="280"
-                    width="280"
-                    ariaLabel="vortex-loading"
-                    wrapperStyle={{}}
-                    wrapperClass="vortex-wrapper"
-                    colors={['red', 'green', 'blue', 'yellow', 'orange', 'purple']}
-                />}
-                
-                {error && <div>Something went wrong. Try again later</div>}
-                
-                {films && films.map((film) =>
+        <div className="FilmGallery">
+            {isLoading && <Loader />}
+            {error && <div>Something went wrong. Try again later</div>}
+            {films && films.map((film) =>
                     <FilmGalleryItem className='FilmGalleryItem' key={film.id} film={film} />)}
             {currentFilm.length > 0 && <Button onClick={handleMoreLoad}>Load More</Button>}
         </div>)

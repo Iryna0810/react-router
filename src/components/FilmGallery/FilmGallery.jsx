@@ -5,9 +5,9 @@ import { Vortex } from 'react-loader-spinner';
 
 
 const FilmGallery = ({ films, error, loading }) => {
-    
+
      return (
-    <ul className="ImageGallery">
+    <ul className="FilmGallery">
         {loading && <Vortex
                     visible={true}
                     height="280"
@@ -21,7 +21,7 @@ const FilmGallery = ({ films, error, loading }) => {
                 {error && <div>Something went wrong. Try again later</div>}
                 
                 {films && films.map((film) =>
-                    <FilmGalleryItem className='ImageGalleryItem' key={film.id} film={film} />)}
+                    <FilmGalleryItem className='FilmGalleryItem' key={film.id} film={film} />)}
             {/* {currentFilm.length > 0 && <Button onClick={handleMoreLoad}>Load More</Button>} */}
         </ul>)
 

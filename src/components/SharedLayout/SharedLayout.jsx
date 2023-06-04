@@ -1,19 +1,18 @@
-import {NavLink} from 'react-router-dom'
-const SharedLayout = () => {
-     
+import { Link, Container, Header, List, LiStyled } from 'components/styled'
+import { NavLink, Outlet } from 'react-router-dom'
+import "../styles.css"
+
+const SharedLayout = () => {    
     
-    return <> 
-    <nav>
-        <ul>
-          <li>
-            <NavLink to='/'>Home</NavLink>
-          </li>
-          <li>
-            <NavLink to='/movies'>Movies</NavLink>
-          </li>
-        </ul>
-        </nav>
-    </>
+    return <Container> 
+    <Header>
+        <List>
+            <Link to='/'>Home</Link>
+            <Link to='/movies'>Movies</Link>
+        </List>
+        </Header>
+        <Outlet />
+    </Container>
     
 }
 export default SharedLayout

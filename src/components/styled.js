@@ -1,14 +1,31 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 export const List = styled.ul`
 display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  list-style-type: none;
-  margin-top: 20px;
-  margin-left: 20px;
-  gap: 10 px;
+  align-items: center;
+  gap: 150px;
+  width: 100%;
+  height: 100%;
+  font: normal normal bold 30px comic sans ms;
+  	list-style: none;
+	padding: 0;
+  margin: 0;
 `;
+
+export const Link = styled(NavLink)`
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+
+  &.active {
+    color: white;
+    background-color: orangered;
+  }`
+
 export const FormWrapper = styled.form`
   display: flex;
   align-items: center;
@@ -18,20 +35,17 @@ export const FormWrapper = styled.form`
   margin: 0 auto;
   padding: 10px;
   gap: 20px;
-
-
-
 `;
 
 export const Header = styled.header`
-  top: 0;
-  left: 0;
-  position: sticky;
+  // top: 0;
+  // left: 0;
+  // position: relative;
   z-index: 1100;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 64px;
+  height: 100px;
   padding-right: 24px;
   padding-left: 24px;
   padding-top: 12px;
@@ -94,16 +108,20 @@ export const LiStyled = styled.li`
   grid-gap: 16px;
   margin-top: 0;
   margin-bottom: 0;
-  padding: 0;
-  list-style: none;
+  padding: 10px;
+  list-style-type: none;
   margin-left: auto;
   margin-right: auto;
+  color: #fff;
+  text-decoration: none;
     `
 
 export const Container = styled.div`
      display: block;
      justify-content: center;
      gap: 8px;
+     margin: 0 auto;
+     padding: 10px;
 `
 
 export const Item = styled.img`

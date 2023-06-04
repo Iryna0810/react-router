@@ -1,6 +1,6 @@
 import FilmGalleryItem from '../FilmGalleryItem/FilmGalleryItem';
 // import { useEffect, useState } from 'react';
-import { List } from 'components/styled';
+// import { List } from 'components/styled';
 import { Vortex } from 'react-loader-spinner';
 
 

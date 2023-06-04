@@ -11,6 +11,7 @@ const Movies = () => {
 const [searchFilms, setSearchFilms] = useState('');
 
     const [films, setFilms] = useState([]);
+    // eslint-disable-next-line no-unused-vars
     const [currentFilm, setCurrentFilm] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState('');

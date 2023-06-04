@@ -1,4 +1,3 @@
-import { LiStyled } from '../styled'
 import '../styles.css'
 const IMG_URL = `https://image.tmdb.org/t/p/original`
 

@@ -1,5 +1,5 @@
-import { Link, Container, Header, List, LiStyled } from 'components/styled'
-import { NavLink, Outlet } from 'react-router-dom'
+import { Link, Container, Header, List } from 'components/styled'
+import { Outlet } from 'react-router-dom'
 import "../styles.css"
 
 const SharedLayout = () => {    

@@ -1,5 +1,5 @@
-import { NavLink, Route, Routes } from "react-router-dom";
-import { List, LiStyled } from "./styled";
+import { Route, Routes } from "react-router-dom";
+// import { List, LiStyled } from "./styled";
 import Home from '../pages/Home'
 import SharedLayout from './SharedLayout/SharedLayout'
 import Movies from "pages/Movies";

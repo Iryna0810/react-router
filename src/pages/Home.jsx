@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import {trendingFilms} from 'servises/fetch_film.js'
 import { Vortex } from 'react-loader-spinner';
-import {FilmGalleryItem} from '../FilmGalleryItem/FilmGalleryItem'
+import {FilmGalleryItem} from '../components/FilmGalleryItem/FilmGalleryItem'
 
 
 

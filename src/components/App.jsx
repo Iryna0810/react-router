@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-// import { List, LiStyled } from "./styled";
 import Home from '../pages/Home'
 import SharedLayout from './SharedLayout/SharedLayout'
 import Movies from "pages/Movies";
@@ -23,10 +22,9 @@ export const App = () => {
           <Route path="cast" element={<Cast />} />
           <Route path="reviews" element={<Reviews />} />
         </Route>
-         {/* <Route path='/movies' element={<div>Movies</div>} />
-        <Route path='/movies' element={<div>Movies</div>} /> */}
       </Route>
       </Routes>
   );
 };
+
 

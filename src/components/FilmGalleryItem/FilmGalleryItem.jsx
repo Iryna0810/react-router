@@ -6,18 +6,19 @@ const FilmGalleryItem = ({ film }) => {
   const { id, overview, title, backdrop_path } = film;
 
   return (
-      <li key={id} className="ImageGalleryItem">
-              <div>
+    <li key={id} className="ImageGalleryItem">
+      <div>
         
         <Link to={`${id}`}>
           <img
-          className='ImageGalleryItem-image'
-          src={`${IMG_URL}/${backdrop_path}`}
+            className='ImageGalleryItem-image'
+            src={`${IMG_URL}/${backdrop_path}`}
             alt={title} />
         </Link>
         <h3>{title}</h3>
         <p>{overview}</p>
       </div>
-      </li>)}
+    </li>)
+};
 
 export default FilmGalleryItem

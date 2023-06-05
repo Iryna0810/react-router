@@ -1,34 +1,15 @@
+import Loader from 'components/Loader/Loader';
 import FilmGalleryItem from '../FilmGalleryItem/FilmGalleryItem';
-// import { useEffect, useState } from 'react';
-// import { List } from 'components/styled';
-import { Vortex } from 'react-loader-spinner';
 
 
 const FilmGallery = ({ films, error, loading }) => {
 
-     return (
-    <ul className="FilmGallery">
-        {loading && <Vortex
-                    visible={true}
-                    height="280"
-                    width="280"
-                    ariaLabel="vortex-loading"
-                    wrapperStyle={{}}
-                    wrapperClass="vortex-wrapper"
-                    colors={['red', 'green', 'blue', 'yellow', 'orange', 'purple']}
-                />}
-                
-                {error && <div>Something went wrong. Try again later</div>}
-                
-                {films && films.map((film) =>
-                    <FilmGalleryItem className='FilmGalleryItem' key={film.id} film={film} />)}
-            {/* {currentFilm.length > 0 && <Button onClick={handleMoreLoad}>Load More</Button>} */}
+    return (
+        <ul className="FilmGallery">
+            {loading && <Loader />}
+            {error && <div>Something went wrong. Try again later</div>}
+            {films && films.map((film) => <FilmGalleryItem className='FilmGalleryItem' key={film.id} film={film} />)}
         </ul>)
-
-
-    
-    
-
-}
+};
 
 export default FilmGallery

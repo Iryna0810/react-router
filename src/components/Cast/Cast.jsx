@@ -1,23 +1,32 @@
 import {  useEffect, useState } from "react";
 import currentFilmInfoCast from 'servises/fetch_movie_current cast'
 import Loader from '../Loader/Loader'
+import { useLocation } from "react-router-dom";
 import "../styles.css"
 
 const IMG_URL = `https://image.tmdb.org/t/p/original`
 
-const Cast = () => {
+const Cast = ({key}) => {
     const [cast, setCast] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState('');
     const [movieId, setMovieId] = useState('');
     
-    const getLocalStorage = () => {
-        const parseContacts = JSON.parse(window.localStorage.getItem('movieIdKey'));
-        if (parseContacts) { setMovieId(parseContacts) };
-    }
+    const location = useLocation();
+    console.log(location.state);
+    
+    // const getLocalStorage = () => {
+    //     const parseContacts = JSON.parse(window.localStorage.getItem('movieIdKey'));
+    //     if (parseContacts) { setMovieId(parseContacts) };
+    // }
    
     useEffect(() => {
-        getLocalStorage();
+        setMovieId(location.state);
+    },[location.state])
+
+    useEffect(() => {
+        // getLocalStorage();
+        
         setIsLoading(true);
         if (movieId) {
             currentFilmInfoCast(movieId)

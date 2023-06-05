@@ -1,4 +1,4 @@
-import { useParams, Outlet } from "react-router-dom";
+import { useParams, Outlet, useSearchParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Loader from '../components/Loader/Loader'
 import { LinkPage, List } from 'components/styled'
@@ -12,6 +12,7 @@ const MovieDetails = () => {
     const [films, setFilms] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState('');
+    const [searchParams, setSearchParams] = useSearchParams();
 
 
     const setLocalStorage = (movieId) => {
@@ -31,6 +32,13 @@ const MovieDetails = () => {
                 setIsLoading(false)
             })
     }, [movieId])
+
+    
+   
+    useEffect(() => {
+        console.log(searchParams);
+    }, [searchParams])
+    
    
     return (
         <div>MovieDetails - {movieId}
@@ -48,10 +56,10 @@ const MovieDetails = () => {
             </div>
             <List>
                 <li>
-                    <LinkPage to="cast" key={movieId}>Cast</LinkPage>
+                    <LinkPage to="cast" state={movieId}>Cast</LinkPage>
                 </li>
                 <li>
-                    <LinkPage to="reviews">Reviews</LinkPage>
+                    <LinkPage to="reviews" state={movieId}>Reviews</LinkPage>
                 </li>
             </List>
             <Outlet />
